@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薪资想过万，代码敲三遍</title>
+</head>
+
+<body>
+    <script src="./assets/lib/jquery.js"></script>
+    <script>
+        /*
+            $.ajaxPrefilter() ajax请求预处理函数。
+
+            语法：
+                $.ajaxPrefilter(function(options){
+                    options 发送ajax请求，设置的配置项
+                })
+            作用：
+                在ajax请求发送之前，添加配置项或者修改现有的配置项。
+        */
+        $.ajaxPrefilter(function (options) {
+            console.log('在ajax请求发送之前，调用了此函数')
+            console.log(options)
+            console.log('--------------------------------------------')
+            // 修改配置项
+            // options.url = '/ergou'
+            // 给没有跟地址的url，拼接一个根地址
+            // '根地址' + options.url
+            options.url = 'http://www.liulongbin.top:3006' + options.url
+        })
+
+        // 发送ajax请求
+        $.ajax({
+            method: 'get',
+            // url: 'http://www.liulongbin.top:3006/api/getbooks',
+            url: '/api/getbooks',
+            data: { id: 1 },
+            success: function (aoe) {
+                console.log(aoe)
+            }
+        })
+    </script>
+</body>
+
+</html>
