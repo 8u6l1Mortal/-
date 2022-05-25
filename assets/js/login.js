@@ -128,6 +128,8 @@ $(function () {
                     icon: 6
                 }, function () {
                     // 消息框，关闭后的回调函数
+                    // 把登录成功之后的token数据，保存到本地存储中
+                    localStorage.setItem('token', res.token)
                     // 跳转到后台首页
                     location.href = '/index.html'
                 })

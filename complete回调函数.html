@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薪资想过万，代码敲三遍</title>
+</head>
+
+<body>
+    <script src="./assets/lib/jquery.js"></script>
+    <script>
+        $.ajax({
+            method: 'get',
+            url: 'http://www.liulongbin.top:3006/api/getbookssssss',
+            success: function (res) {
+                console.log('请求成功了', res)
+            },
+            complete: function () {
+                console.log('请求完成了')
+            }
+        })
+    </script>
+</body>
+
+</html>
