@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>薪资想过万，代码敲三遍</title>
+</head>
+
+<body>
+    <input type="file">
+    <hr>
+    <img src="" alt="">
+    <script>
+        // 即时预览，选中的图片文件
+        const ipt = document.querySelector('input')
+        ipt.addEventListener('change', function () {
+            const fileList = this.files
+            const file = fileList[0]
+
+            // 获取文件对象在内存中的url地址
+            const imgUrl = URL.createObjectURL(file)
+            console.log(imgUrl)
+
+            // 给img标签设置src
+            document.querySelector('img').src = imgUrl
+        })
+
+    </script>
+</body>
+
+</html>

@@ -81,7 +81,7 @@ $(function () {
             data: $(this).serialize(),
             // success: function(){},
             success(res) {
-                console.log(res)
+                // console.log(res)
                 // 判断注册是否成功
                 if (res.status !== 0) {
                     return layui.layer.msg(res.message, {
@@ -117,7 +117,7 @@ $(function () {
             // 简写
             data,
             success(res) {
-                console.log(res)
+                // console.log(res)
                 // 判断登录是否成功
                 if (res.status !== 0) {
                     return layui.layer.msg(res.message, {
